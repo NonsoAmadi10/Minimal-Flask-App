@@ -80,3 +80,8 @@ AttributeError: 'str' object has no attribute '_sa_instance_state'
 2020-03-25 15:13:05,606 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:55]
 2020-03-25 15:15:36,753 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:55]
 2020-03-25 15:24:03,310 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:55]
+2020-03-27 09:51:25,057 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:57]
+2020-03-27 09:58:14,312 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:57]
+2020-03-27 10:11:35,726 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:57]
+2020-03-27 10:20:45,207 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:57]
+2020-03-27 10:31:01,627 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:57]

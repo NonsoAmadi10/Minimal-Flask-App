@@ -1,4 +1,4 @@
-2020-03-25 15:04:46,137 ERROR: Exception on /explore [GET] [in /home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/app.py:1891]
+2020-03-27 11:44:38,464 ERROR: Exception on /index [GET] [in /home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,29 +14,40 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/penciledge/Desktop/FlaskApp/app/routes.py", line 139, in explore
-    return render_template('index.html', title='Explore', posts=posts)
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/loaders.py", line 129, in load
-    code = environment.compile(source, name, filename)
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/environment.py", line 638, in compile
-    self.handle_exception(source=source_hint)
+  File "/home/penciledge/Desktop/FlaskApp/app/routes.py", line 37, in index
+    prev_url=prev_url)
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
   File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/home/penciledge/Desktop/FlaskApp/app/templates/index.html", line 28, in template
-    {%  if post is not None %}
-jinja2.exceptions.TemplateAssertionError: no test named 'None'
-2020-03-25 15:06:05,130 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:55]
-2020-03-25 15:06:35,594 ERROR: Exception on /index [POST] [in /home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/home/penciledge/Desktop/FlaskApp/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/penciledge/Desktop/FlaskApp/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
+    {%- endblock metas %}
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 13, in block "body"
+    {%- block styles %}
+  File "/home/penciledge/Desktop/FlaskApp/app/templates/base.html", line 26, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/penciledge/Desktop/FlaskApp/app/templates/index.html", line 7, in block "app_content"
+    {{ wtf.quick_form(form) }}
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'wtf' is undefined
+2020-03-27 11:45:17,315 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:59]
+2020-03-27 13:20:37,337 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:59]
+2020-03-27 13:27:09,666 ERROR: Exception on /explore [GET] [in /home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -52,36 +63,41 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/penciledge/Desktop/FlaskApp/app/routes.py", line 23, in index
-    posts = Post(title=form.title.data, body=form.post.data, author=current_user.username )
-  File "<string>", line 4, in __init__
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/sqlalchemy/orm/state.py", line 433, in _initialize_instance
-    manager.dispatch.init_failure(self, args, kwargs)
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 69, in __exit__
-    exc_value, with_traceback=exc_tb,
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
-    raise exception
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/sqlalchemy/orm/state.py", line 430, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/sqlalchemy/ext/declarative/base.py", line 842, in _declarative_constructor
-    setattr(self, k, kwargs[k])
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/sqlalchemy/orm/attributes.py", line 271, in __set__
-    instance_state(instance), instance_dict(instance), value, None
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/sqlalchemy/orm/attributes.py", line 1017, in set
-    value = self.fire_replace_event(state, dict_, value, old, initiator)
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/sqlalchemy/orm/attributes.py", line 1040, in fire_replace_event
-    state, value, previous, initiator or self._replace_token
-  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/sqlalchemy/orm/attributes.py", line 1449, in emit_backref_from_scalar_set_event
-    instance_state(child),
-AttributeError: 'str' object has no attribute '_sa_instance_state'
-2020-03-25 15:08:02,788 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:55]
-2020-03-25 15:11:26,360 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:55]
-2020-03-25 15:12:16,850 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:55]
-2020-03-25 15:13:05,606 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:55]
-2020-03-25 15:15:36,753 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:55]
-2020-03-25 15:24:03,310 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:55]
-2020-03-27 09:51:25,057 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:57]
-2020-03-27 09:58:14,312 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:57]
-2020-03-27 10:11:35,726 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:57]
-2020-03-27 10:20:45,207 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:57]
-2020-03-27 10:31:01,627 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:57]
+  File "/home/penciledge/Desktop/FlaskApp/app/routes.py", line 152, in explore
+    next_url=next_url, prev_url=prev_url)
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/penciledge/Desktop/FlaskApp/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/penciledge/Desktop/FlaskApp/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
+    {%- endblock metas %}
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 13, in block "body"
+    {%- block styles %}
+  File "/home/penciledge/Desktop/FlaskApp/app/templates/base.html", line 51, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/penciledge/Desktop/FlaskApp/app/templates/index.html", line 7, in block "app_content"
+    {{ wtf.quick_form(form) }}
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/runtime.py", line 679, in _invoke
+    rv = self._func(*arguments)
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/wtf.html", line 157, in template
+    document is interpreted as a reference to the start of that document,
+  File "/home/penciledge/.virtualenvs/FlaskApp-2SbuFn8L/lib/python3.6/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2020-03-27 13:31:34,054 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:59]
+2020-03-27 14:14:16,624 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:59]
+2020-03-27 15:31:32,655 INFO: FlaskApp startup [in /home/penciledge/Desktop/FlaskApp/app/__init__.py:61]

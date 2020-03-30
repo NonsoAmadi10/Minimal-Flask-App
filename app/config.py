@@ -13,3 +13,4 @@ class Config(object):
     MAIL_PASSWORD = environ.get('MAIL_PASSWORD')
     ADMINS = [environ.get('ADMIN')]
     POSTS_PER_PAGE = 1
+    LANGUAGES = ['en', 'es']

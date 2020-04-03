@@ -1,6 +1,7 @@
 from datetime import datetime
 from hashlib import md5
-from app import db, login, app
+from flask import current_app
+from app import db, login
 from time import time
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -75,7 +76,7 @@ class User(UserMixin, db.Model):
     @staticmethod
     def verify_reset_password_token(token):
         try:
-            id = jwt.decode(token, app.config['SECRET_KEY'],
+            id = jwt.decode(token, current_app.config['SECRET_KEY'],
                             algorithms=['HS256'])['reset_password']
         except:
             return
